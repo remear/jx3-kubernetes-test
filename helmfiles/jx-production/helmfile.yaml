@@ -1,0 +1,11 @@
+filepath: ""
+namespace: jx-production
+repositories:
+- name: dev
+  url: http://bucketrepo-jx.planagement.net
+releases:
+- chart: dev/jx-golang-http-test
+  version: 0.0.1
+  name: jx-golang-http-test
+templates: {}
+renderedvalues: {}
