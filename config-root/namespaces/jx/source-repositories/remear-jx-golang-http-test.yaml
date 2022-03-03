@@ -1,0 +1,22 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: remear
+    provider: github
+    repository: jx-golang-http-test
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+  name: remear-jx-golang-http-test
+  namespace: jx
+spec:
+  httpCloneURL: https://github.com/remear/jx-golang-http-test.git
+  org: remear
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: jx-golang-http-test
+  scheduler:
+    kind: ""
+    name: in-repo
+  url: https://github.com/remear/jx-golang-http-test

@@ -6,6 +6,10 @@ data:
       repos:
       - remear/jx3-kubernetes-test
       require_self_approval: true
+    - lgtm_acts_as_approve: true
+      repos:
+      - remear/jx-golang-http-test
+      require_self_approval: true
     cat: {}
     cherry_pick_unapproved: {}
     config_updater:
@@ -16,6 +20,11 @@ data:
         env/prow/plugins.yaml:
           name: plugins
     external_plugins:
+      remear/jx-golang-http-test:
+      - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
+        name: cd-indicators
+      - endpoint: http://lighthouse-webui-plugin.jx.svc.cluster.local/lighthouse/events
+        name: lighthouse-webui-plugin
       remear/jx3-kubernetes-test:
       - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
         name: cd-indicators
@@ -26,6 +35,22 @@ data:
       additional_labels: null
     owners: {}
     plugins:
+      remear/jx-golang-http-test:
+      - approve
+      - assign
+      - blunderbuss
+      - help
+      - hold
+      - lgtm
+      - lifecycle
+      - override
+      - size
+      - trigger
+      - wip
+      - heart
+      - cat
+      - dog
+      - pony
       remear/jx3-kubernetes-test:
       - config-updater
       - approve
@@ -55,6 +80,11 @@ data:
     - repos:
       - remear/jx3-kubernetes-test
       trusted_org: todo
+    - repos:
+      - remear/jx-golang-http-test
+      trusted_org: todo
+    welcome:
+    - message_template: Welcome
 kind: ConfigMap
 metadata:
   creationTimestamp: null
